@@ -126,13 +126,13 @@ class StaticMap extends AbstractMap
             }
         }
         if ($this->getSensor()) {
-            $request .= 'sensor=true&';
+            $request .= 'sensor=true';
         } else {
-            $request .= 'sensor=false&';
+            $request .= 'sensor=false';
         }
         if ($this->hasMarkers()) {
             foreach ($this->getMarkers() as $marker) {
-                $request .= 'markers=';
+                $request .= '&markers=';
                 if ($marker->hasMeta()) {
                     foreach ($marker->getMeta() as $mkey => $mval) {
                         $request .= $mkey.':'.$mval.'|';
